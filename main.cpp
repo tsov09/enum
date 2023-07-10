@@ -15,33 +15,6 @@ enum Department {
 class Patient {
 public:
 	static Department department;
-	/*static void set_department(string dep) {
-		if (dep == "Therapy") {
-			this->depardment = Therapy;
-		}
-		else if (dep == "Surgery") {
-			this->depardment = Surgery;
-		}
-		else if (dep == "Cardiology") {
-			this->depardment = Cardiology;
-		}
-		else if (dep == "Gastroenterology") {
-			this->depardment = Gastroenterology;
-		}
-		else if (dep == "Gynecology") {
-			this->depardment = Gynecology;
-		}
-		else if (dep == "Infectious_Disease") {
-			this->depardment = Infectious_Disease;
-		}
-		else if (dep == "Psychiatric") {
-			this->depardment = Psychiatric;
-		}
-		else {
-			cout << "Department is undefined" << endl;
-			exit(0);
-		}
-	}*/
 	static string get_department_name(Department dep) {
 		switch (dep)
 		{
