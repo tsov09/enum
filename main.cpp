@@ -14,7 +14,8 @@ enum Department {
 
 class Patient {
 public:
-	void set_department(string dep) {
+	static Department department;
+	/*static void set_department(string dep) {
 		if (dep == "Therapy") {
 			this->depardment = Therapy;
 		}
@@ -40,9 +41,9 @@ public:
 			cout << "Department is undefined" << endl;
 			exit(0);
 		}
-	}
-	string get_department_name() {
-		switch (this->depardment)
+	}*/
+	static string get_department_name(Department dep) {
+		switch (dep)
 		{
 		case Therapy:
 			return "Therapy";
@@ -63,7 +64,7 @@ public:
 			exit(0);
 		}
 	}
-	Department get_department_floor(string dep) {
+	static Department get_department_floor(string dep) {
 		if (dep == "Therapy") {
 			return Therapy;
 		}
@@ -89,22 +90,17 @@ public:
 			cout << "Department is undefined" << endl;
 			exit(0);
 		}
-		return this->depardment;
 	}
-private:
-	Department depardment;
 };
 
 
 
+Department Patient::department = Psychiatric;
 int main() {
-	Patient patient;
-	patient.set_department("Psychiatric");
-
-	string dep = patient.get_department_name();
+	string dep = Patient::get_department_name(Patient::department);
 
 	cout << dep << " department floor is " ;
-	cout << patient.get_department_floor(dep) << "." << endl;
+	cout << Patient::get_department_floor(dep) << "." << endl;
 
 	return 0;
 }
