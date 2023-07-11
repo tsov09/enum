@@ -2,7 +2,8 @@
 using namespace std;
 
 enum Department {
-	Therapy = 1,
+	Reception = 1,
+	Therapy,
 	Surgery,
 	Cardiology,
 	Gastroenterology,
@@ -33,8 +34,7 @@ public:
 		case Psychiatric:
 			return "Psychiatric";
 		default:
-			cout << "Department is undefined" << endl;
-			exit(0);
+			return "Reception";
 		}
 	}
 	static Department get_department_floor(string dep) {
@@ -60,8 +60,7 @@ public:
 			return Psychiatric;
 		}
 		else {
-			cout << "Department is undefined" << endl;
-			exit(0);
+			return Reception;
 		}
 	}
 };
